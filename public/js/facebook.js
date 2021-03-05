@@ -21,6 +21,6 @@ function statusChangeCallback(response) {
 function changeUser(response) {
     $(".facebookLogin").hide()
     var userName = response.name
-    var link = "/loginFromFb"
+    var link = "/fbLoginHandler"
     $.post( link, { name: response.name } );
 } 

@@ -75,6 +75,12 @@ exports.storeTask = function(req, res) {
   res.render('setTask', curUserData);
 }
 
+exports.fbLoginHandler = function(req, res) {
+  console.log("here is fb login handler")
+  console.log(req.name)
+}
+
+
 exports.storeSubTask = function(req, res) {
   let fs = require('fs')
   let rawdata = fs.readFileSync('data.json',  {encoding:'utf8',flag:'r'})
