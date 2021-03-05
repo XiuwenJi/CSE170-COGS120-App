@@ -76,8 +76,22 @@ exports.storeTask = function(req, res) {
 }
 
 exports.fbLoginHandler = function(req, res) {
-  console.log("here is fb login handler")
-  console.log(req.name)
+  let fs = require('fs')
+  let rawdata = fs.readFileSync('data.json',  {encoding:'utf8',flag:'r'})
+  var dataDict = JSON.parse(rawdata);
+  userName = req.query.name
+  let userDataDict = dataDict["userTable"]
+  if (userDataDict[userName] === undefined) {
+    userDataDict[userName] = {}
+    userDataDict[userName]["task_completed"] = []
+    userDataDict[userName]["task_todo"] = []
+  }
+  dataDict["userTable"] = userDataDict
+  var jsonString = JSON.stringify(dataDict)
+  fs.writeFileSync("data.json", jsonString, {encoding:'utf8',flag:'w'})
+  let curUserData = userDataDict[userName]
+  curUserData["userName"] = userName
+  res.render('setTask', curUserData);
 }
 
 

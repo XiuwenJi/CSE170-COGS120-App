@@ -16,12 +16,13 @@
         <form class="login-form" action="/setTask">
             <h2 style="text-align: center;">Log in</h2>
             <label class="box" for="uname">UserName</label>
-            <input type="text" class="form-control" placeholder="Username" name="uname" required>
+            <input id = "loginUserName" type="text" class="form-control" placeholder="Username" name="uname" required>
             <label for="pwd" class="box">Password</label>
             <input type="password" class="form-control" placeholder="Password" name="pwd" required>
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
+        <br>
         <p class="facebookLogin">
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
             </fb:login-button>
