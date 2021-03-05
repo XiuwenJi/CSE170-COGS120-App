@@ -34,7 +34,18 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', index.login);
+app.get('/welcome', index.welcome);
+app.get('/todoTask', index.todoTask);
+app.get('/todoTask/:uname/:name', index.todoTask);
+app.get('/setTask', index.setTask)
+app.get('/setTask/:uname', index.setTaskFromNav)
+// app.get('/todoSubTask', index.todoSubTask)
+app.get('/todoSubTask/:uname/:tname', index.todoSubTask)
+app.get('/report', index.report);
+app.get('/storeTask', index.storeTask);
+app.get('/storeSubTask', index.storeSubTask);
+
 // Example route
 // app.get('/users', user.list);
 

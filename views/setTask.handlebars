@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <!-- Content Type Meta tag -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!--Responsive Viewport Meta tag-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<!-- Roboto font embed -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+		<!-- Stylesheets -->
+		<link href="css/navbar.css" rel="stylesheet">
+		<link href="../css/navbar.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+	<body>
+		<div class="container" id="task-center">
+		<h3>Please enter task and corresponding estimated time</h3>
+		<section>
+
+        <form action="/storeTask">
+            <input class="taskInputElement" type="text" placeholder="Enter an Task.." name="taskName">
+			<button type="submit">Add</button>
+            <input class="taskTimeElement" type="number" placeholder="Estimate Time.." name="taskTime">
+			<input class="taskTimeElement" type="hidden" value={{userName}} name="userName">
+        </form>
+			<div >
+				
+				<h4><u>Todo Task</u></h4>
+				
+				{{#each task_todo}}
+				<a href="/todoTask/{{uname}}/{{name}}">
+					<ul> {{name}} </ul> 
+				</a>
+				{{/each}}
+				<!--<br>
+				<h4><u>Completed Task</u></h4>
+				{{#each task_completed}}
+				<ul > {{name}} </ul> 
+				{{/each}}
+				-->
+
+				
+			</div>
+		</section>
+		</div>
+		<div>
+		<nav class="mobile-nav">
+		
+		<a href="/"><div class="nav-item">
+			<img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/3521175/home.svg' alt=''>
+			<p>Home</p>
+			</div></a>
+		
+			<a href="/setTask/{{userName}}"><div class="nav-item">
+			<img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/3521175/menu.svg' alt=''>
+			<p>Task</p>
+			</div></a>
+		</nav>
+  </div> 
+	</body>
+</html>
