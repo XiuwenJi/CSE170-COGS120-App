@@ -6,7 +6,9 @@
 	<title>Login Page</title>
     <link href="css/login.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-    
+    <script src="https://code.jquery.com/jquery.js"></script>
+    {{> facebook}}
+	<script src="js/facebook.js"></script>
 
 </head>
 <body>
@@ -20,6 +22,10 @@
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
+        <p class="facebookLogin">
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+        </p>
     </div>
 </body>
 </html>
