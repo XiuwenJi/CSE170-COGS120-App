@@ -167,9 +167,6 @@ exports.report = function(req, res){
   let subTaskTime = req.query.subTaskTime
   let taskName = req.query.taskName
   curData = {}
-  console.log("debug!!!!");
-  console.log(userName);
-  console.log(taskName);
   curData["subTaskName"] = subTaskName
   curData["subTaskTime"] = subTaskTime
   curData["taskName"] = taskName
