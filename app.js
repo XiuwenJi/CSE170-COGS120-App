@@ -43,7 +43,7 @@ app.get('/setTask/:uname', index.setTaskFromNav)
 app.get('/fbLoginHandler', index.fbLoginHandler)
 // app.get('/todoSubTask', index.todoSubTask)
 app.get('/todoSubTask/:uname/:tname', index.todoSubTask)
-app.get('/report', index.report);
+app.get('/report/:uname/:tname', index.report);
 app.get('/storeTask', index.storeTask);
 app.get('/storeSubTask', index.storeSubTask);
 

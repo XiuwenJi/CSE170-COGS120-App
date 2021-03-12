@@ -29,8 +29,12 @@
         </div>
 
         <button onclick="startCountDown()">Start</button>
-        <button onclick="window.location.href='/todoTask/{{userName}}/{{taskName}}'" type="submit">Finish</button>
-
+        <form action= "/report/{{userName}}/{{taskName}}">
+         <input type="hidden" value={{userName}} name="userName">
+         <input type="hidden" value={{taskName}} name="taskName">
+         <button type="submit">Finish</button>
+        </form>
+        
 
         <script>
             function startCountDown() {
@@ -72,7 +76,8 @@
             
                     updateClock();
                     var timeinterval = setInterval(updateClock, 1000);
-                    aler("Time is up! You can go back and start another subTask.");
+                    //alter("Time is up! You can start another subTask or click START button to restart again.");
+
                 }
                 subTaskTime = Number({{subTaskTime}})
                 var deadline = new Date(Date.parse(new Date()) + subTaskTime * 60 * 1000);

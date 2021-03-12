@@ -159,5 +159,20 @@ exports.login = function(req, res){
 
 
 exports.report = function(req, res){
-  res.render('report');
+  let fs = require('fs')
+  let rawdata = fs.readFileSync('data.json',  {encoding:'utf8',flag:'r'})
+  let dataDict = JSON.parse(rawdata);
+  let userName = req.params.uname
+  let subTaskName = req.query.subTaskName
+  let subTaskTime = req.query.subTaskTime
+  let taskName = req.query.taskName
+  curData = {}
+  console.log("debug!!!!");
+  console.log(userName);
+  console.log(taskName);
+  curData["subTaskName"] = subTaskName
+  curData["subTaskTime"] = subTaskTime
+  curData["taskName"] = taskName
+  curData["userName"] = userName
+  res.render('report' , curData);
 };

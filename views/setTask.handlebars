@@ -19,14 +19,14 @@
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
 	</head>
 	<body>
-		<div class="container" id="task-center">
+		<div class="container" id="task-center" style="margin-bottom: 58px">
 		<h3>Please enter task and corresponding estimated time</h3>
 		<section>
 
-        <form action="/storeTask">
+        <form action="/storeTask" >
             <input class="taskInputElement" type="text" placeholder="Enter an Task.." name="taskName">
 			<button type="submit">Add</button>
-            <input class="taskTimeElement" type="number" placeholder="Estimate Time.." name="taskTime">
+            <input class="taskTimeElement" type="number" placeholder="Estimate Time (Mins) .." name="taskTime">
 			<input class="taskTimeElement" type="hidden" value={{userName}} name="userName">
         </form>
 			<div >
